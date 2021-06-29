@@ -3,7 +3,7 @@
 This project is a complete front-end website for magic-books ltd, I used react/redux as the framework/library.
 ## Live demo
 
-[live demo](#)
+[live demo](https://goofy-hugle-3e957d.netlify.app/)
 
 ## Built With
 
