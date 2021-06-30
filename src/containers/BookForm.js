@@ -1,3 +1,5 @@
+import React from 'react';
+
 const CATEGORIES = [
   { key: '0', name: 'Action' },
   { key: '1', name: 'Biography' },
