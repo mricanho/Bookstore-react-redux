@@ -1,15 +1,11 @@
-import './App.css';
+import Booklist from '../containers/BookList';
+import BooksForm from '../containers/BookForm';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hey, I&#39;m Miguel Ricaño and this will be a bookstore website using React/Redux
-        </p>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  <div className="App">
+    <Booklist />
+    <BooksForm />
+  </div>;
+};
 
 export default App;
