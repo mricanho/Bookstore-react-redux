@@ -8,7 +8,7 @@ const CATEGORIES = [
   { key: '6', name: 'Sci-Fi' },
 ];
 
-const BooksForm = () => (
+const BookForm = () => (
   <form>
     <div>
       <label htmlFor="inputTitle" className="form-label">
@@ -32,4 +32,4 @@ const BooksForm = () => (
   </form>
 );
 
-export default BooksForm;
+export default BookForm;
