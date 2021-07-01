@@ -1,37 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import uniqid from 'uniqid';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions';
 
-const CATEGORIES = [
-  { key: '0', name: 'Action' },
-  { key: '1', name: 'Biography' },
-  { key: '2', name: 'History' },
-  { key: '3', name: 'Horror' },
-  { key: '4', name: 'Kids' },
-  { key: '5', name: 'Learning' },
-  { key: '6', name: 'Sci-Fi' },
+const booksCategories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
 ];
 
-const BookForm = () => (
-  <form>
-    <div>
-      <label htmlFor="inputTitle" className="form-label">
-        Title
-        <input type="text" className="form-control" id="inputTitle" />
-      </label>
-    </div>
-    <div>
-      <label htmlFor="category" className="form-label">
-        Category
-        <select name="category" className="form-select" id="category">
-          {
-            CATEGORIES.map(({ key, name }) => <option value={name} key={key}>{name}</option>)
-          }
-        </select>
-      </label>
-    </div>
-    <div className="col-md-12">
-      <button type="button" className="btn btn-primary">Create book</button>
-    </div>
-  </form>
-);
+const BookForm = ({ createNewBook }) => {
+  const [data, setData] = useState({
+    id: uniqid(),
+    title: '',
+    category: '',
+  });
 
-export default BookForm;
+  const handleChange = ({ target }) => {
+    setData((oldData) => ({
+      ...oldData,
+      [target.name]: target.value,
+    }));
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    createNewBook(data);
+    setData({
+      id: uniqid.process(),
+      title: '',
+      category: '',
+    });
+  };
+
+  return (
+    <div>
+      <form>
+        <label htmlFor="title">
+          Title
+          <input value={data.title} onChange={handleChange} id="title" name="title" type="text" />
+        </label>
+
+        <label htmlFor="options">
+          Title
+          <select
+            onChange={handleChange}
+            name="category"
+            id="options"
+            value={data.category}
+          >
+            <option value="" disabled>
+              Select Category
+            </option>
+            {booksCategories.map((category) => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
+        <input onClick={(e) => handleClick(e)} type="submit" value="New book" />
+      </form>
+    </div>
+  );
+};
+
+BookForm.propTypes = {
+  createNewBook: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  createNewBook: (data) => dispatch(createBook(data)),
+});
+
+export default connect(null, mapDispatchToProps)(BookForm);
