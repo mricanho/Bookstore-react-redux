@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import uniqid from 'uniqid';
+import App from './components/App';
+import reducers from './reducers';
+import { createBook } from './actions';
+
+const store = createStore(reducers);
+
+const INITIAL_STATE = [
+  { id: uniqid.process(), title: 'The Lord Of The Rings', category: 'Action' },
+  { id: uniqid.process(), title: 'I, Robot', category: 'Sci-Fi' },
+  { id: uniqid.process(), title: 'Chaos Theory', category: 'Learning' },
+  {
+    id: uniqid.process(),
+    title: 'Exodus',
+    category: 'History',
+  },
+];
+
+INITIAL_STATE.map((book) => store.dispatch(createBook(book)));
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+  document.getElementById('root'),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
