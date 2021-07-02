@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 import PropTypes from 'prop-types';
 import { createBook } from '../actions';
 
-const booksCategories = [
+export const booksCategories = [
   'Action',
   'Biography',
   'History',
