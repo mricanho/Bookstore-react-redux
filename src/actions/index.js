@@ -9,3 +9,9 @@ export const deleteBook = (book) => ({
   payload:
     book,
 });
+
+export const changeFilter = (category) => ({
+  type: 'CHANGE_FILTER',
+  payload:
+    category,
+});
