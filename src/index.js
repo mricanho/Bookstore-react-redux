@@ -6,6 +6,7 @@ import uniqid from 'uniqid';
 import App from './components/App';
 import reducers from './reducers';
 import { createBook } from './actions';
+import 'bulma/css/bulma.min.css';
 
 const store = createStore(reducers);
 
