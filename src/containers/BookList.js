@@ -27,7 +27,7 @@ const BooksList = ({
   return (
 
     <>
-      <nav className="navbar container">
+      <nav className="navbar">
         <div className="navbar-brand">
           <a className="navbar-item" href="https://bulma.io">
             BOOK STORE
@@ -42,22 +42,28 @@ const BooksList = ({
               <CategoryFilter selection={handleFilterChange} />
             </div>
           </div>
-          <div className="navbar-end">
-            l
-          </div>
         </div>
       </nav>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Book Id</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {selectedCategory().map((book) => (
 
-      <div className="container card">
-        {selectedCategory().map((book) => (
-
-          <Book
-            key={book.id}
-            book={book}
-            handleBookRemove={handleBookRemove}
-          />
-        ))}
-      </div>
+            <Book
+              key={book.id}
+              book={book}
+              handleBookRemove={handleBookRemove}
+            />
+          ))}
+        </tbody>
+      </table>
 
     </>
   );

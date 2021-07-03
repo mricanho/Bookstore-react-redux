@@ -40,12 +40,11 @@ const BookForm = ({ createNewBook }) => {
 
   return (
     <div>
-      <form>
+      <form className="form">
         <label htmlFor="title">
           Title
           <input value={data.title} onChange={handleChange} id="title" name="title" type="text" />
         </label>
-
         <label htmlFor="options">
           Title
           <select
