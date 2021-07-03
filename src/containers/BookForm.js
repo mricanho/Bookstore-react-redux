@@ -28,7 +28,7 @@ const BookForm = ({ createNewBook }) => {
     }));
   };
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     createNewBook(data);
     setData({
@@ -64,7 +64,7 @@ const BookForm = ({ createNewBook }) => {
             ))}
           </select>
         </label>
-        <input onClick={(e) => handleClick(e)} type="submit" value="New book" />
+        <input onClick={(e) => handleSubmit(e)} type="submit" value="New book" />
       </form>
     </div>
   );

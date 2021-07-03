@@ -5,7 +5,7 @@ import { deleteBook } from '../actions';
 import Book from '../components/Book';
 
 const BooksList = ({ books, deleteBook }) => {
-  const handleRemoveBook = (book) => {
+  const handleBookRemove = (book) => {
     deleteBook(book);
   };
   return (
@@ -23,7 +23,7 @@ const BooksList = ({ books, deleteBook }) => {
       <tbody>
         {books.bookReducer.map((book) => (
 
-          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
+          <Book key={book.id} book={book} handleBookRemove={handleBookRemove} />
 
         ))}
       </tbody>
