@@ -6,7 +6,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const Book = ({ book, handleBookRemove }) => {
   const percentage = Math.floor((book.chapter / book.totalChapter) * 100);
   return (
-    <div className="my-4">
+    <div className="my-4 px-6">
       <div className="columns my-4 box">
         <div className="column">
           <div>

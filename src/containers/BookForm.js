@@ -44,14 +44,14 @@ const BookForm = ({ createNewBook }) => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container px-6">
       <hr />
       <div className="has-text-weight-bold has-text-grey mb-2">
         ADD NEW BOOK
       </div>
       <form>
         <div className="columns is-align-items-center">
-          <div className="column is-one-third is-justify-content-center is-flex">
+          <div className="column is-three-fifths is-justify-content-center is-flex">
             <input
               className="input"
               value={data.title}
@@ -63,7 +63,7 @@ const BookForm = ({ createNewBook }) => {
             />
           </div>
 
-          <div className="column is-one-third is-justify-content-center is-flex">
+          <div className="column is-justify-content-center is-flex">
             <div className="select  is-fullwidth">
               <select
                 onChange={handleChange}
@@ -83,9 +83,9 @@ const BookForm = ({ createNewBook }) => {
             </div>
           </div>
 
-          <div className="column is-one-third is-justify-content-center is-flex">
+          <div className="column is-justify-content-flex-end is-flex pr-0">
             <input
-              className="button is-info"
+              className="button is-info is-fullwidth m-1"
               onClick={(e) => handleClick(e)}
               type="submit"
               value="ADD BOOK"

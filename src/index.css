@@ -22,3 +22,7 @@ a,
 .autor {
   color: #4386bf !important;
 }
+
+.select.is-fullwidth select {
+  width: 17.813rem !important;
+}
