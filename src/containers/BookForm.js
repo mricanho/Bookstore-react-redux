@@ -72,7 +72,7 @@ const BookForm = ({ createNewBook }) => {
                 value={data.category}
               >
                 <option value="" disabled>
-                  Select Category
+                  Category
                 </option>
                 {booksCategories.map((category) => (
                   <option value={category} key={category}>

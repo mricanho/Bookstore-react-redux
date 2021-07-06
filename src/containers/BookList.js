@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { deleteBook, changeFilter } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
+import 'font-awesome/css/font-awesome.min.css';
 
 const BooksList = ({
   books, deleteBook, booksFiltered, changeFilter,
@@ -25,45 +26,47 @@ const BooksList = ({
   };
 
   return (
-
     <>
-      <nav className="navbar">
+      <nav className="navbar px-6">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            BOOK STORE
+          <a className="navbar-item has-text-info has-text-weight-bold is-size-4" href="/">
+            BOOKSTORE CMS
           </a>
         </div>
-        <div className="navbar-menu">
+        <div className="navbar-menu is-active">
           <div className="navbar-start">
             <div className="navbar-item">
               <a href="#!">Books</a>
             </div>
             <div className="navbar-item">
-              <CategoryFilter selection={handleFilterChange} />
+              <div className="select">
+                <CategoryFilter selection={handleFilterChange} />
+              </div>
+            </div>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <a href="#!" className="icon has-text-info is-large">
+                <i className="fas fa-2x fa-user-circle" />
+              </a>
             </div>
           </div>
         </div>
       </nav>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Book Id</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {selectedCategory().map((book) => (
 
-            <Book
-              key={book.id}
-              book={book}
-              handleBookRemove={handleBookRemove}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div className="container has-background-light">
+        {selectedCategory().map((book) => (
+          <Book key={book.id} book={book} handleBookRemove={handleBookRemove} />
+        ))}
+        <hr
+          className="mt-6"
+          style={{
+            color: '#e8e8e8',
+            backgroundColor: '#e8e8e8',
+            borderColor: '#e8e8e8',
+          }}
+        />
+      </div>
 
     </>
   );

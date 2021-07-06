@@ -7,6 +7,7 @@ import App from './components/App';
 import reducers from './reducers';
 import { createBook } from './actions';
 import 'bulma/css/bulma.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const store = createStore(reducers);
 
