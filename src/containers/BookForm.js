@@ -88,7 +88,7 @@ const BookForm = ({ createNewBook }) => {
               className="button is-info"
               onClick={(e) => handleClick(e)}
               type="submit"
-              value="New book"
+              value="ADD BOOK"
             />
           </div>
         </div>

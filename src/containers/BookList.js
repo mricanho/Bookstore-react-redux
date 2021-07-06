@@ -5,6 +5,7 @@ import { deleteBook, changeFilter } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 import 'font-awesome/css/font-awesome.min.css';
+import user from '../images/circle-user.png';
 
 const BooksList = ({
   books, deleteBook, booksFiltered, changeFilter,
@@ -28,7 +29,7 @@ const BooksList = ({
   return (
     <>
       <nav className="navbar px-6">
-        <div className="navbar-brand">
+        <div className="navbar-brand pl-6">
           <a className="navbar-item has-text-info has-text-weight-bold is-size-4" href="/">
             BOOKSTORE CMS
           </a>
@@ -36,7 +37,7 @@ const BooksList = ({
         <div className="navbar-menu is-active">
           <div className="navbar-start">
             <div className="navbar-item">
-              <a href="#!">Books</a>
+              <a href="#!" className="is-size-6 has-text-dark">BOOKS</a>
             </div>
             <div className="navbar-item">
               <div className="select">
@@ -44,10 +45,10 @@ const BooksList = ({
               </div>
             </div>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end pr-6">
             <div className="navbar-item">
               <a href="#!" className="icon has-text-info is-large">
-                <i className="fas fa-2x fa-user-circle" />
+                <img src={user} alt="user icon" />
               </a>
             </div>
           </div>

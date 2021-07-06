@@ -16,24 +16,23 @@ const Book = ({ book, handleBookRemove }) => {
             <h1 className="is-size-5 has-text-weight-bold has-text-black is-family-monospace">
               {book.title}
             </h1>
-            <p className="is-size-7 has-text-weight-light has-text-info">
+            <p className="is-size-7 has-text-weight-light autor">
               {book.author}
             </p>
           </div>
           <div className="is-flex is-size-7 my-3">
-            <a href="#!" className="has-text-info">
+            <a href="#!">
               Comments
             </a>
             <div className="mx-2 has-text-grey-light">|</div>
             <a
               href="#!"
-              className="has-text-info"
               onClick={() => handleBookRemove(book)}
             >
               Remove
             </a>
             <div className="mx-2 has-text-grey-light">|</div>
-            <a href="#!" className="has-text-info">
+            <a href="#!">
               Edit
             </a>
           </div>
@@ -49,7 +48,7 @@ const Book = ({ book, handleBookRemove }) => {
             <h1 className="is-size-3 has-text-black">
               {`${percentage}% `}
             </h1>
-            <div className="is-size-5">Completed</div>
+            <div className="is-size-6">Completed</div>
           </div>
         </div>
         <div className="column is-family-monospace">
