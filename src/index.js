@@ -11,13 +11,33 @@ import 'bulma/css/bulma.min.css';
 const store = createStore(reducers);
 
 const INITIAL_STATE = [
-  { id: uniqid.process(), title: 'The Lord Of The Rings', category: 'Action' },
-  { id: uniqid.process(), title: 'I, Robot', category: 'Sci-Fi' },
-  { id: uniqid.process(), title: 'Chaos Theory', category: 'Learning' },
+  {
+    id: uniqid.process(),
+    title: 'The Lord Of The Rings',
+    category: 'Action',
+    totalChapter: Math.floor(Math.random() * 50) + 20,
+    chapter: Math.floor(Math.random() * 20) + 1,
+  },
+  {
+    id: uniqid.process(),
+    title: 'I, Robot',
+    category: 'Sci-Fi',
+    totalChapter: Math.floor(Math.random() * 50) + 20,
+    chapter: Math.floor(Math.random() * 20) + 1,
+  },
+  {
+    id: uniqid.process(),
+    title: 'Chaos Theory',
+    category: 'Learning',
+    totalChapter: Math.floor(Math.random() * 50) + 20,
+    chapter: Math.floor(Math.random() * 20) + 1,
+  },
   {
     id: uniqid.process(),
     title: 'Exodus',
     category: 'History',
+    totalChapter: Math.floor(Math.random() * 50) + 20,
+    chapter: Math.floor(Math.random() * 20) + 1,
   },
 ];
 
