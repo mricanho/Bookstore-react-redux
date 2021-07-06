@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { deleteBook, changeFilter } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
+import 'font-awesome/css/font-awesome.min.css';
+import user from '../images/circle-user.png';
 
 const BooksList = ({
   books, deleteBook, booksFiltered, changeFilter,
@@ -25,45 +27,48 @@ const BooksList = ({
   };
 
   return (
-
     <>
       <nav className="navbar">
-        <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            BOOK STORE
-          </a>
-        </div>
-        <div className="navbar-menu">
-          <div className="navbar-start">
-            <div className="navbar-item">
-              <a href="#!">Books</a>
+        <div className="container">
+          <div className="navbar-brand pl-6">
+            <a className="navbar-item has-text-info has-text-weight-bold is-size-4 pl-0" href="/">
+              BOOKSTORE CMS
+            </a>
+          </div>
+          <div className="navbar-menu is-active">
+            <div className="navbar-start">
+              <div className="navbar-item">
+                <a href="#!" className="is-size-6 has-text-dark">BOOKS</a>
+              </div>
+              <div className="navbar-item">
+                <div className="select">
+                  <CategoryFilter selection={handleFilterChange} />
+                </div>
+              </div>
             </div>
-            <div className="navbar-item">
-              <CategoryFilter selection={handleFilterChange} />
+            <div className="navbar-end pr-6">
+              <div className="navbar-item pr-0">
+                <a href="#!" className="icon has-text-info is-large">
+                  <img src={user} alt="user icon" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </nav>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Book Id</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {selectedCategory().map((book) => (
-
-            <Book
-              key={book.id}
-              book={book}
-              handleBookRemove={handleBookRemove}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div className="container has-background-light">
+        {selectedCategory().map((book) => (
+          <Book key={book.id} book={book} handleBookRemove={handleBookRemove} />
+        ))}
+        <hr
+          className="mt-6 mx-6"
+          style={{
+            color: '#e8e8e8',
+            backgroundColor: '#e8e8e8',
+            borderColor: '#e8e8e8',
+          }}
+        />
+      </div>
 
     </>
   );
