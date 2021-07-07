@@ -1,6 +1,9 @@
 # Bookstore
 
 This project is a complete front-end website for magic-books ltd, I used react/redux as the framework/library.
+
+![image](https://user-images.githubusercontent.com/60631456/124830285-447e6580-df3f-11eb-9a40-b41e448d16a4.png)
+
 ## Live demo
 
 [live demo](https://goofy-hugle-3e957d.netlify.app/)
